@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Calculator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Basic Calculator</h1>
+    <form>
+      <input type="number" id="num1" name="num1" placeholder="Enter first number"><br>
+      <input type="number" id="num2" name="num2" placeholder="Enter second number"><br>
+      
+      <label>Select Operator:</label><br><br>
+      
+      <input type="button" value="+" onclick="calculate('+')">
+      <input type="button" value="-" onclick="calculate('-')">
+      <input type="button" value="*" onclick="calculate('*')">
+      <input type="button" value="/" onclick="calculate('/')"><br><br>
+
+      <p id="result"></p>
+    </form>
+  </div>
+
+  <script>
+    function calculate(operator) {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      
+      let result;
+      switch (operator) {
+        case "+":
+          result = num1 + num2;
+          break;
+        case "-":
+          result = num1 - num2;
+          break;
+        case "*":
+          result = num1 * num2;
+          break;
+        case "/":
+          result = num1 / num2;
+          break;
+        default:
+          result = "Invalid operator";
+      }
+
+      document.getElementById("result").innerHTML = "Result: " + result;
+    }
+  </script>
+</body>
+</html>
